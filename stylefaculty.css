@@ -1,0 +1,61 @@
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+h1, h2{
+	text-align:center;
+}
+    .faculty-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .faculty-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 250px;
+      margin: 15px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .faculty-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .contact-button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #0089ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      
+    }
+    .contact-form {
+      margin-top: 40px;
+      width: 300px;
+      padding: 10px;
+      margin-left: 400px;
+      display:none;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 300px;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>

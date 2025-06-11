@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Team – Department of BCA</title>
+  <link rel="stylesheet" href="stylefaculty.css">
+</head>
+<body>
+  <h1>Faculty Team – Department of XYZ</h1>
+  <div class="faculty-container">
+    <div class="faculty-card">
+      <img src="image1.jpg" alt="Dr. Anitha Kumar">
+      <h2>Dr. Anitha Kumar</h2>
+      <p>Computer Applications Dept.</p>
+      <p>Passionate about AI and machine learning.</p>
+      <button class="contact-button" onclick="showfrm()">Contact</button>
+    </div>
+    <div class="faculty-card">
+      <img src="image3.jpg" alt="Mr. Rahul Das">
+      <h2>Mr. Rahul Das</h2>
+      <p>BCA Dept.</p>
+      <p>Dedicated robotics researcher and educator.</p>
+      <button class="contact-button"onclick="showfrm()">Contact</button>
+    </div>
+    <div class="faculty-card">
+      <img src="image2.jpg" alt="Prof. Kavita Reddy">
+      <h2>Prof. Kavita Reddy</h2>
+      <p>BCA Dept.</p>
+      <p>Expert in calculus</p>
+      <button class="contact-button" onclick="showfrm()">Contact</button>
+    </div>
+  </div>
+
+  
+  <div class="contact-form" id="frm">
+    <h2>Contact a Faculty Member</h2>
+    <form id="contactForm">
+      <input type="text" name="full_name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel"   name="phone" placeholder="Phone Number" required>
+      <textarea name="message" placeholder="Message" rows="5" required></textarea>
+      <button type="submit" class="contact-button">Submit</button>
+      <input type="button" value="Hide" class="contact-button" OnClick="return hidefrm()"/>
+
+      </form>
+  </div>
+
+</body>
+</html>
+
+<script>
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Clear previous errors
+    const errorElements = document.querySelectorAll('.error-message');
+    errorElements.forEach(el => el.style.display = 'none');
+
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validation flags
+    let isValid = true;
+
+    // Name validation
+    if (name === '') {
+        document.getElementById('nameError').textContent = 'Name is required';
+        document.getElementById('nameError').style.display = 'block';
+        isValid = false;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === '' || !emailPattern.test(email)) {
+        document.getElementById('emailError').textContent = 'Valid email is required';
+        document.getElementById('emailError').style.display = 'block';
+        isValid = false;
+    }
+
+    // Phone validation
+    const phonePattern = /^[0-9]{10}$/;
+    if (phone === '' || !phonePattern.test(phone)) {
+        document.getElementById('phoneError').textContent = 'Valid phone number is required';
+        document.getElementById('phoneError').style.display = 'block';
+        isValid = false;
+    }
+
+    // Message validation
+    if (message === '') {
+        document.getElementById('messageError').textContent = 'Message is required';
+        document.getElementById('messageError').style.display = 'block';
+        isValid = false;
+    }
+
+    // If form is valid, you can submit it or perform any other action
+    
+   if(isValid) {
+        alert('Form submitted successfully!');
+        hidefrm();           
+    }
+
+});
+
+
+function showfrm(){
+var x = document.getElementById("frm");
+x.style.display="block";
+}
+
+function hidefrm(){
+var x = document.getElementById("frm");
+x.style.display="none";
+}
+
+
+</script>
